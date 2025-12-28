@@ -11,109 +11,97 @@ class ProductCard extends HTMLElement {
     const price = this.getAttribute('price');
     const detailUrl = this.getAttribute('detail-url') || '#';
 
+    // Format harga ke dalam format mata uang Rupiah
+    const formattedPrice = new Intl.NumberFormat('id-ID', {
+      style: 'currency',
+      currency: 'IDR',
+      minimumFractionDigits: 0
+    }).format(price);
+
     this.shadowRoot.innerHTML = `
       <style>
+        .product-link {
+          text-decoration: none;
+          color: inherit;
+          display: block;
+          height: 100%;
+        }
         .product-card {
-          border: 1px solid #ddd;
-          border-radius: 8px;
-          padding: 1.5rem;
+          border: 1px solid #eee;
+          border-radius: var(--border-radius, 8px);
           text-align: center;
           background-color: #fff;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-          transition: transform 0.2s, box-shadow 0.2s;
+          box-shadow: var(--shadow, 0 4px 8px rgba(0,0,0,0.05));
+          transition: transform 0.3s, box-shadow 0.3s;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           height: 100%;
+          overflow: hidden;
         }
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
         }
-        .product-card img {
-          max-width: 100%;
-          height: 180px;
+        .card-image-container {
+            width: 100%;
+            padding-top: 75%; /* Aspect ratio 4:3 */
+            position: relative;
+            overflow: hidden;
+        }
+        .card-image-container img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
           object-fit: cover;
-          border-radius: 5px;
+          transition: transform 0.3s;
         }
-        .product-card h3 {
-          margin: 1rem 0 0.5rem;
-          font-size: 1.25rem;
+        .product-card:hover img {
+            transform: scale(1.05);
         }
-        .product-card p {
-          margin: 0.5rem 0;
-          flex-grow: 1;
-        }
-        .price {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #c0392b;
-            margin: 1rem 0;
-        }
-        .buttons {
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+        }
+        .card-content h3 {
+          margin: 0 0 0.5rem;
+          font-size: 1.25rem;
+          color: var(--primary-color, #333);
+        }
+        .card-content p {
+          margin: 0.5rem 0;
+          flex-grow: 1;
+          font-size: 0.9rem;
+          color: var(--text-color, #666);
+        }
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent-color, #c0392b);
             margin-top: 1rem;
         }
-        .button {
-          display: inline-block;
-          background-color: #333;
-          color: #fff;
-          padding: 0.75rem 1rem;
-          text-decoration: none;
-          border-radius: 5px;
-          cursor: pointer;
-          border: none;
-          font-size: 1rem;
-          transition: background-color 0.2s;
-        }
-        .button:hover {
-            background-color: #555;
-        }
-        .add-to-cart-btn {
-            background-color: #27ae60;
-        }
-        .add-to-cart-btn:hover {
-            background-color: #2ecc71;
-        }
-        .detail-button {
-            background-color: transparent;
-            color: #333;
-            border: 1px solid #333;
-        }
-        .detail-button:hover {
-            background-color: #333;
-            color: #fff;
-        }
       </style>
-      <div class="product-card">
-        <div>
+      <a href="${detailUrl}" class="product-link">
+        <div class="product-card">
+          <div class="card-image-container">
             <img src="${image}" alt="${name}">
+          </div>
+          <div class="card-content">
             <h3>${name}</h3>
             <p>${description}</p>
+            <div class="price">${formattedPrice}</div>
+          </div>
         </div>
-        <div>
-            <div class="price">Rp ${price}</div>
-            <div class="buttons">
-                <button class="button add-to-cart-btn">Tambah ke Keranjang</button>
-                <a href="${detailUrl}" class="button detail-button">Lihat Detail</a>
-            </div>
-        </div>
-      </div>
+      </a>
     `;
-
-    this.shadowRoot.querySelector('.add-to-cart-btn').addEventListener('click', () => {
-        this.dispatchEvent(new CustomEvent('add-to-cart', {
-            bubbles: true,
-            composed: true,
-            detail: {
-                name: name,
-                price: parseFloat(price)
-            }
-        }));
-    });
   }
 }
 
-customElements.define('product-card', ProductCard);
+// Hanya definisikan custom element jika belum ada
+if (!customElements.get('product-card')) {
+  customElements.define('product-card', ProductCard);
+}

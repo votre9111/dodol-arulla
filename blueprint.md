@@ -1,41 +1,83 @@
-# Blueprint Aplikasi Dodol Arulla
+# Blueprint Aplikasi: Website Dodol Arulla
 
-## Ringkasan
+## Ringkasan Proyek
 
-Aplikasi web ini adalah toko online untuk produk Dodol Arulla, sebuah merek dodol inovatif dari Purwokerto yang menawarkan berbagai rasa buah modern. Aplikasi ini memungkinkan pengguna untuk menjelajahi produk, melihat detail produk, menambahkan produk ke keranjang belanja, dan melakukan checkout.
+Website Dodol Arulla adalah sebuah platform digital yang berfungsi sebagai etalase produk dan identitas merek. Tujuannya adalah untuk menyajikan informasi produk secara elegan, menceritakan kisah di balik merek, dan memfasilitasi pemesanan secara langsung melalui WhatsApp. Aplikasi ini dirancang dengan pendekatan modern, minimalis, dan berfokus pada kemudahan pengguna.
 
-## Gaya, Desain, dan Fitur
+---
 
-### Versi Awal
+## Desain dan Fitur Aplikasi
 
-*   **Desain:** Modern, bersih, dan berfokus pada produk.
-*   **Palet Warna:** Dominan hijau dan putih, dengan aksen oranye untuk tombol CTA.
-*   **Tipografi:** Menggunakan font sans-serif yang mudah dibaca.
-*   **Tata Letak:** Responsif, menggunakan grid untuk menampilkan produk dan alasan mengapa memilih Dodol Arulla.
-*   **Fitur:**
-    *   Halaman utama dengan bagian hero, "Kenapa Memilih Dodol Arulla?", "Varian Paling Favorit", dan "Dari Blog Kami".
-    *   Halaman detail produk dengan gambar, deskripsi, harga, dan tombol "Tambah ke Keranjang".
-    *   Keranjang belanja modal yang muncul saat tombol keranjang di header diklik.
-    *   Navigasi yang mudah diakses di header dan footer.
+### 1. Struktur Halaman
 
-### Perubahan Saat Ini
+*   **`index.html` (Halaman Utama):**
+    *   Menampilkan *hero section* dengan slogan utama.
+    *   Menyajikan tiga keunggulan utama produk (misalnya, "Dari Buah Asli", "Inovasi Rasa").
+    *   Menyorot beberapa produk paling favorit sebagai etalase.
+    *   Ajakan bertindak (CTA) utama yang mengarahkan ke halaman katalog.
 
-*   **Pembaruan Konten:**
-    *   Menambahkan produk Pisang Cavendish dan Nanas ke bagian "Varian Paling Favorit" di halaman utama.
-    *   Memperbarui bagian "Lihat Rasa Lainnya" di semua halaman detail produk untuk mencantumkan produk Pisang Cavendish dan Nanas.
-*   **Perbaikan Bug:**
-    *   Memperbaiki path gambar yang salah untuk produk Pisang Cavendish di `products.html`.
-    *   Memperbaiki `detail-url` yang salah untuk produk Pisang Cavendish di `products.html`.
+*   **`katalog.html` (Katalog Produk):**
+    *   Galeri lengkap yang menampilkan semua varian rasa Dodol Arulla.
+    *   Setiap produk direpresentasikan oleh `product-card` yang seragam.
+    *   Mengklik sebuah produk akan mengarahkan pengguna ke halaman detail produk yang bersangkutan.
 
-## Rencana Saat Ini
+*   **`product-detail.html` (Detail Produk):**
+    *   Template halaman tunggal yang menampilkan informasi rinci satu produk.
+    *   Menampilkan galeri gambar produk, nama, harga, dan deskripsi mendalam.
+    *   Fitur utama adalah tombol **"Pesan via WhatsApp"** yang mengarahkan pengguna ke aplikasi WhatsApp dengan pesan pemesanan yang sudah terisi otomatis.
 
-*   **Tugas:** Memperbarui halaman utama dan semua halaman detail produk untuk menampilkan produk Pisang Cavendish dan Nanas.
-*   **Langkah-langkah:**
-    1.  Perbarui `index.html` untuk menambahkan `product-card` untuk Pisang Cavendish dan Nanas di bagian "Varian Paling Favorit".
-    2.  Perbarui `product-belimbing.html` untuk mengganti kartu produk di bagian "Lihat Rasa Lainnya" dengan Pisang Cavendish, Nanas, dan Jambu Biji.
-    3.  Perbarui `product-durian.html` untuk mengganti kartu produk di bagian "Lihat Rasa Lainnya" dengan Pisang Cavendish, Nanas, dan Nangka.
-    4.  Perbarui `product-jambu.html` untuk mengganti kartu produk di bagian "Lihat Rasa Lainnya" dengan Pisang Cavendish, Nanas, dan Durian.
-    5.  Perbarui `product-mangga.html` untuk mengganti kartu produk di bagian "Lihat Rasa Lainnya" dengan Pisang Cavendish, Nanas, dan Nangka.
-    6.  Perbarui `product-nangka.html` untuk mengganti kartu produk di bagian "Lihat Rasa Lainnya" dengan Pisang Cavendish, Nanas, dan Durian.
-    7.  Perbarui `product-sirsak.html` untuk mengganti kartu produk di bagian "Lihat Rasa Lainnya" dengan Pisang Cavendish, Nanas, dan Jambu Biji.
-    8.  Perbarui `products.html` untuk menambahkan `product-card` untuk Pisang Cavendish dan Nanas.
+*   **`about.html` (Tentang Kami):**
+    *   Halaman yang berisi narasi tentang sejarah, visi, dan misi Dodol Arulla untuk membangun hubungan emosional dengan pelanggan.
+
+*   **`sop.html` (Standard Operating Procedure):**
+    *   Halaman informatif yang berisi prosedur standar operasi untuk penggunaan mesin produksi, seperti Mesin Penggiling dan Mesin Sealer.
+
+### 2. Komponen Web yang Dapat Digunakan Kembali
+
+Aplikasi ini dibangun secara modular menggunakan Web Components untuk konsistensi dan kemudahan pengelolaan.
+
+*   **`<site-header>` (`js/components/header-component.js`):**
+    *   Menyediakan navigasi utama yang konsisten di seluruh halaman.
+    *   Tautan navigasi: Home, Katalog, Tentang Kami, SOP.
+
+*   **`<site-footer>` (`js/components/footer-component.js`):**
+    *   Menampilkan informasi kontak, tautan media sosial, dan hak cipta di bagian bawah setiap halaman.
+
+*   **`<product-card>` (`js/components/product-card.js`):**
+    *   Kartu produk modular yang menampilkan gambar, nama, deskripsi singkat, dan harga.
+    *   Dirancang sebagai tautan tunggal yang mengarah ke halaman detail produk untuk menyederhanakan interaksi pengguna.
+
+### 3. Fungsionalitas Inti
+
+*   **Alur Pemesanan WhatsApp:** Sistem keranjang belanja internal telah digantikan sepenuhnya oleh alur pemesanan yang lebih sederhana. Tombol "Pesan via WhatsApp" pada halaman detail produk menjadi satu-satunya gerbang pemesanan, mengurangi friksi dan mempercepat proses.
+
+### 4. Desain Visual dan Struktur
+
+*   **Estetika:** Desain yang bersih, modern, dan fokus pada kualitas visual produk.
+*   **Struktur File:** Aset-aset proyek diatur secara logis:
+    *   `images/`: Berisi semua gambar produk, ikon, dan aset visual lainnya.
+    *   `css/`: Berisi file `style.css` untuk semua aturan gaya global.
+    *   `js/components/`: Berisi semua definisi Web Components.
+*   **Responsif:** Tata letak dirancang agar berfungsi dengan baik di perangkat desktop maupun mobile.
+
+---
+
+## Riwayat Perubahan Terakhir
+
+Berikut adalah ringkasan perubahan yang telah diimplementasikan dalam sesi pengembangan ini:
+
+1.  **Penyederhanaan Fitur:**
+    *   **Menghapus Fungsionalitas Keranjang Belanja:** Seluruh sistem keranjang belanja, termasuk modal, tombol "Tambah ke Keranjang", dan logika JavaScript terkait, telah dihapus untuk menyederhanakan alur pengguna.
+    *   **Menghapus Halaman Tidak Relevan:** Halaman `blog.html`, `contact.html`, `reseller.html`, `visit.html`, dan semua postingan blog individual telah dihapus dari proyek.
+
+2.  **Pembaruan Struktur dan Navigasi:**
+    *   **Navigasi Diperbarui:** Komponen Header disederhanakan dengan tautan ke halaman inti: Home, Katalog, Tentang Kami, dan SOP.
+    *   **Penggantian Nama Halaman:** Halaman `products.html` diubah namanya menjadi `katalog.html` agar lebih intuitif.
+
+3.  **Implementasi Alur Pemesanan Baru:**
+    *   **Pembuatan Halaman Detail Produk:** Halaman `product-detail.html` baru dibuat sebagai template untuk menampilkan informasi produk secara rinci.
+    *   **Integrasi Tombol WhatsApp:** Tombol "Pesan via WhatsApp" ditambahkan sebagai CTA utama pada halaman detail produk.
+    *   **Pembaruan Kartu Produk:** Komponen `product-card` diubah menjadi tautan langsung ke halaman detail produk, menghilangkan tombol-tombol sekunder.
+
+4.  **Reorganisasi Aset:**
+    *   **Konsolidasi Gambar:** Semua aset gambar dari direktori `assets/` dipindahkan dan diatur ulang ke dalam direktori `images/` untuk menyederhanakan struktur proyek.
