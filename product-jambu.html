@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dodol Jambu Biji - Arulla</title>
+  <meta name="description" content="Nikmati kesegaran tropis Dodol Jambu Biji Arulla, dibuat dari jambu biji merah asli yang kaya rasa.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Dodol Arulla</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="reseller.html">Reseller</a></li>
+        </ul>
+        <a href="#" class="cta-button">Beli di Marketplace</a>
+      </nav>
+      <div class="header-right">
+        <button class="cart-button">
+          <img src="/assets/img/icon-cart.svg" alt="Cart">
+          <span class="cart-count">0</span>
+        </button>
+        <button class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="product-detail">
+      <div class="container">
+        <div class="product-detail-grid">
+          <div class="product-detail-image">
+            <img src="/assets/img/product-jambu.jpg" alt="Dodol Jambu Biji">
+          </div>
+          <div class="product-detail-info">
+            <h1>Dodol Jambu Biji</h1>
+            <p class="price">Rp 22.000</p>
+            <p class="description">Kesegaran buah jambu biji merah kini bisa dinikmati dalam bentuk dodol. Varian ini menghadirkan rasa manis dan sedikit asam yang sangat khas dari jambu biji, memberikan sensasi tropis yang menyenangkan. Dibuat dari sari buah jambu asli untuk rasa yang tak terlupakan.</p>
+            
+            <h4>Detail Produk:</h4>
+            <ul>
+              <li><strong>Rasa:</strong> Manis-asam khas jambu biji merah yang segar.</li>
+              <li><strong>Bahan Utama:</strong> Sari buah jambu biji merah, tepung ketan, gula, santan.</li>
+              <li><strong>Asal:</strong> Purwokerto, Jawa Tengah.</li>
+              <li><strong>Berat Bersih:</strong> 200g</li>
+            </ul>
+            
+            <button class="add-to-cart-button" data-name="Dodol Jambu Biji" data-price="22000" data-image="/assets/img/product-jambu.jpg">Tambah ke Keranjang</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-products">
+        <div class="container">
+            <h2>Lihat Rasa Lainnya</h2>
+            <div class="product-grid">
+                <product-card image="/assets/img/product-durian.jpg" name="Dodol Durian" price="25000" description="Aroma kuat dan rasa legit dari durian pilihan asli." detail-url="product-durian.html"></product-card>
+                <product-card image="/assets/img/product-belimbing.jpg" name="Dodol Belimbing Wuluh" price="22000" description="Sensasi asam segar belimbing wuluh yang unik." detail-url="product-belimbing.html"></product-card>
+                <product-card image="/assets/img/product-mangga.jpg" name="Dodol Mangga" price="23000" description="Manisnya buah mangga harum manis dalam setiap gigitan legit." detail-url="product-mangga.html"></product-card>
+            </div>
+        </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+        <!-- Footer content will be consistent across pages -->
+    </div>
+  </footer>
+
+  <div class="cart-modal"></div>
+  <script src="js/main.js"></script>
+  <script type="module" src="js/components/product-card.js"></script>
+</body>
+</html>

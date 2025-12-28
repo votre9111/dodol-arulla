@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dodol Sirsak - Arulla</title>
+  <meta name="description" content="Rasakan perpaduan unik manis dan asam yang menyegarkan dari Dodol Sirsak Arulla.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Dodol Arulla</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="reseller.html">Reseller</a></li>
+        </ul>
+        <a href="#" class="cta-button">Beli di Marketplace</a>
+      </nav>
+      <div class="header-right">
+        <button class="cart-button">
+          <img src="assets/img/icon-cart.svg" alt="Cart">
+          <span class="cart-count">0</span>
+        </button>
+        <button class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="product-detail">
+      <div class="container">
+        <div class="product-detail-grid">
+          <div class="product-detail-image">
+            <img src="assets/img/product-sirsak.jpg" alt="Dodol Sirsak">
+          </div>
+          <div class="product-detail-info">
+            <h1>Dodol Sirsak</h1>
+            <p class="price">Rp 23.000</p>
+            <p class="description">Varian sirsak kami menangkap esensi rasa buahnya yang kompleks: perpaduan sempurna antara manis dan asam yang tajam. Memberikan sensasi segar yang berbeda dari dodol pada umumnya, varian ini sangat cocok bagi Anda yang mencari cita rasa baru yang menarik dan tidak membosankan.</p>
+            
+            <h4>Detail Produk:</h4>
+            <ul>
+              <li><strong>Rasa:</strong> Manis dengan sentuhan asam yang kuat dan menyegarkan.</li>
+              <li><strong>Bahan Utama:</strong> Daging buah sirsak, tepung ketan, gula, santan.</li>
+              <li><strong>Asal:</strong> Purwokerto, Jawa Tengah.</li>
+              <li><strong>Berat Bersih:</strong> 200g</li>
+            </ul>
+            
+            <button class="add-to-cart-button" data-name="Dodol Sirsak" data-price="23000" data-image="assets/img/product-sirsak.jpg">Tambah ke Keranjang</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-products">
+        <div class="container">
+            <h2>Lihat Rasa Lainnya</h2>
+            <div class="product-grid">
+                <product-card image="assets/img/product-belimbing.jpg" name="Dodol Belimbing Wuluh" price="22000" description="Sensasi asam segar belimbing wuluh yang unik." detail-url="product-belimbing.html"></product-card>
+                <product-card image="assets/img/product-jambu.jpg" name="Dodol Jambu Biji" price="22000" description="Rasa manis-asam segar dari jambu biji merah pilihan." detail-url="product-jambu.html"></product-card>
+                <product-card image="assets/img/product-nanas.jpg" name="Dodol Nanas" price="22000" description="Kesegaran rasa nanas tropis yang manis dan sedikit asam." detail-url="product-nanas.html"></product-card>
+            </div>
+        </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+        <!-- Footer content will be consistent across pages -->
+    </div>
+  </footer>
+
+  <div class="cart-modal"></div>
+  <script src="js/main.js"></script>
+  <script type="module" src="js/components/product-card.js"></script>
+</body>
+</html>

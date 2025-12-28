@@ -1,14 +1,159 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dodol Arulla - Inovasi Dodol Buah dari Purwokerto</title>
+  <meta name="description" content="Rasakan sensasi baru dodol dengan rasa buah-buahan asli dari Purwokerto. Dibuat dari buah segar pilihan, menghadirkan cita rasa modern dan otentik.">
+  <meta property="og:title" content="Dodol Arulla - Inovasi Dodol Buah dari Purwokerto">
+  <meta property="og:description" content="Rasakan sensasi baru dodol dengan rasa buah-buahan asli dari Purwokerto.">
+  <meta property="og:image" content="/assets/img/hero-bg.jpg">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Dodol Arulla</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="reseller.html">Reseller</a></li>
+        </ul>
+        <a href="#" class="cta-button">Beli di Marketplace</a>
+      </nav>
+      <div class="header-right">
+        <button class="cart-button">
+          <img src="/assets/img/icon-cart.svg" alt="Cart">
+          <span class="cart-count">0</span>
+        </button>
+        <button class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Dodol Arulla: Sensasi Buah Asli</h1>
+        <p>Inovasi dodol modern dari Purwokerto. Manisnya pas, buahnya berasa!</p>
+        <a href="products.html" class="cta-button">Lihat Semua Rasa</a>
+      </div>
+    </section>
+
+    <section class="why-us">
+      <div class="container">
+        <h2>Kenapa Memilih Dodol Arulla?</h2>
+        <div class="reasons-grid">
+          <div class="reason">
+            <img src="/assets/img/icon-fruit.svg" alt="">
+            <h3>Dari Buah Asli</h3>
+            <p>Kami menggunakan jus dan puree buah asli, bukan sekadar perasa, untuk cita rasa yang otentik dan segar.</p>
+          </div>
+          <div class="reason">
+            <img src="/assets/img/icon-innovation.svg" alt="">
+            <h3>Inovasi Rasa</h3>
+            <p>Temukan varian rasa unik dan modern seperti Belimbing Wuluh, Jambu Biji, dan Pisang Cavendish.</p>
+          </div>
+          <div class="reason">
+            <img src="/assets/img/icon-quality-modern.svg" alt="">
+            <h3>Kualitas Modern</h3>
+            <p>Diproses secara higienis dengan standar kualitas tinggi untuk menghasilkan dodol yang lezat dan aman.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-products">
+      <div class="container">
+        <h2>Varian Paling Favorit</h2>
+        <div class="product-grid">
+          <product-card image="/assets/img/product-durian.jpg" name="Dodol Durian" price="25000" description="Aroma kuat dan rasa legit dari durian pilihan asli." detail-url="product-durian.html"></product-card>
+          <product-card image="/assets/img/product-nangka.jpg" name="Dodol Nangka" price="22000" description="Manis khas buah nangka matang yang menggugah selera." detail-url="product-nangka.html"></product-card>
+          <product-card image="/assets/img/product-jambu.jpg" name="Dodol Jambu Biji" price="22000" description="Rasa manis-asam segar dari jambu biji merah pilihan." detail-url="product-jambu.html"></product-card>
+        </div>
+      </div>
+    </section>
+
+    <section class="latest-articles">
+      <div class="container">
+        <h2>Dari Blog Kami</h2>
+        <div class="article-grid">
+          <div class="article-card">
+            <img src="/assets/img/blog-1.jpg" alt="Blog 1">
+            <h3>Lebih dari Sekadar Dodol</h3>
+            <p>Kisah inovasi Arulla dalam menghadirkan dodol buah di Purwokerto.</p>
+            <a href="blog-post-1.html" class="button">Baca Selengkapnya</a>
+          </div>
+          <div class="article-card">
+            <img src="/assets/img/blog-2.jpg" alt="Blog 2">
+            <h3>Dari Kebun ke Dapur Arulla</h3>
+            <p>Bagaimana kami memilih buah-buahan segar terbaik untuk dodol Anda.</p>
+            <a href="blog-post-2.html" class="button">Baca Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>Dodol Arulla</h4>
+          <p>Inovasi dodol buah dari Purwokerto, dibuat dengan buah asli dan bahan-bahan berkualitas.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Kontak</h4>
+          <ul>
+            <li>WhatsApp: <a href="https://wa.me/6281234567890">0812-3456-7890</a></li>
+            <li>Email: <a href="mailto:info@dodolarulla.com">info@dodolarulla.com</a></li>
+            <li>Alamat: Jalan Jenderal Soedirman No. 45, Purwokerto, Jawa Tengah</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Marketplace</h4>
+          <ul>
+            <li><a href="#">Tokopedia</a></li>
+            <li><a href="#">Shopee</a></li>
+            <li><a href="#">TikTok Shop</a></li>
+            <li><a href="#">Blibli</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Sosial Media</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-modal">
+    <div class="cart-modal-content">
+      <span class="close-cart">&times;</span>
+      <h2>Keranjang Belanja</h2>
+      <div class="cart-items"></div>
+      <div class="cart-total">
+        <p>Total: <span id="cart-total-amount">Rp 0</span></p>
+      </div>
+      <button class="checkout-button">Checkout</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script type="module" src="js/components/product-card.js"></script>
 </body>
 </html>

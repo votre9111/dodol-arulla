@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dodol Durian - Arulla</title>
+  <meta name="description" content="Rasakan kemewahan rasa Dodol Durian Arulla, dibuat dari daging durian asli berkualitas tinggi dari Purwokerto.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Dodol Arulla</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="reseller.html">Reseller</a></li>
+        </ul>
+        <a href="#" class="cta-button">Beli di Marketplace</a>
+      </nav>
+      <div class="header-right">
+        <button class="cart-button">
+          <img src="/assets/img/icon-cart.svg" alt="Cart">
+          <span class="cart-count">0</span>
+        </button>
+        <button class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="product-detail">
+      <div class="container">
+        <div class="product-detail-grid">
+          <div class="product-detail-image">
+            <img src="/assets/img/product-durian.jpg" alt="Dodol Durian">
+          </div>
+          <div class="product-detail-info">
+            <h1>Dodol Durian</h1>
+            <p class="price">Rp 25.000</p>
+            <p class="description">Bagi para pecinta raja buah, varian ini adalah sebuah keharusan. Kami menggunakan daging buah durian asli pilihan yang diolah langsung untuk menjaga aroma dan cita rasanya yang kuat. Rasakan sensasi legit dodol berpadu dengan rasa durian yang mewah dan otentik di setiap gigitan.</p>
+            
+            <h4>Detail Produk:</h4>
+            <ul>
+              <li><strong>Rasa:</strong> Manis, legit, dengan aroma durian yang kuat.</li>
+              <li><strong>Bahan Utama:</strong> Daging buah durian asli, tepung ketan, gula, santan.</li>
+              <li><strong>Asal:</strong> Purwokerto, Jawa Tengah.</li>
+              <li><strong>Berat Bersih:</strong> 200g</li>
+            </ul>
+            
+            <button class="add-to-cart-button" data-name="Dodol Durian" data-price="25000" data-image="/assets/img/product-durian.jpg">Tambah ke Keranjang</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-products">
+        <div class="container">
+            <h2>Lihat Rasa Lainnya</h2>
+            <div class="product-grid">
+                <product-card image="/assets/img/product-nangka.jpg" name="Dodol Nangka" price="22000" description="Manis khas buah nangka matang yang menggugah selera." detail-url="product-nangka.html"></product-card>
+                <product-card image="/assets/img/product-sirsak.jpg" name="Dodol Sirsak" price="23000" description="Perpaduan rasa manis dan asam khas buah sirsak yang menyegarkan." detail-url="product-sirsak.html"></product-card>
+                <product-card image="/assets/img/product-jambu.jpg" name="Dodol Jambu Biji" price="22000" description="Rasa manis-asam segar dari jambu biji merah pilihan." detail-url="product-jambu.html"></product-card>
+            </div>
+        </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+        <!-- Footer content will be consistent across pages -->
+    </div>
+  </footer>
+
+  <div class="cart-modal"></div>
+  <script src="js/main.js"></script>
+  <script type="module" src="js/components/product-card.js"></script>
+</body>
+</html>
