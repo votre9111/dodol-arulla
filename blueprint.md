@@ -11,9 +11,10 @@ Website Dodol Arulla adalah sebuah platform digital yang berfungsi sebagai etala
 ### 1. Struktur Halaman
 
 *   **`index.html` (Halaman Utama):**
-    *   Menampilkan *hero section* dengan slogan utama.
-    *   Menyajikan tiga keunggulan utama produk (misalnya, "Dari Buah Asli", "Inovasi Rasa").
-    *   Menyorot beberapa produk paling favorit sebagai etalase.
+    *   Menampilkan *hero section* dengan latar belakang gambar produk, slogan utama, dan deskripsi singkat. Teks diposisikan di tengah layar untuk dampak visual maksimal.
+    *   Header navigasi didesain transparan di awal dan berubah menjadi solid putih saat halaman digulir ke bawah untuk menjaga keterbacaan.
+    *   Menyajikan bagian "Kenapa Memilih Dodol Arulla?" untuk menyoroti tiga keunggulan utama produk.
+    *   Terdapat *footer* yang konsisten dengan halaman lainnya.
     *   Ajakan bertindak (CTA) utama yang mengarahkan ke halaman katalog.
 
 *   **`katalog.html` (Katalog Produk):**
@@ -24,7 +25,7 @@ Website Dodol Arulla adalah sebuah platform digital yang berfungsi sebagai etala
 *   **`product-detail.html` (Detail Produk):**
     *   Template halaman tunggal yang menampilkan informasi rinci satu produk.
     *   Menampilkan galeri gambar produk, nama, harga, dan deskripsi mendalam.
-    *   Fitur utama adalah tombol **"Pesan via WhatsApp"** yang mengarahkan pengguna ke aplikasi WhatsApp dengan pesan pemesanan yang sudah terisi otomatis.
+    *   Fitur utama adalah tombol **\"Pesan via WhatsApp\"** yang mengarahkan pengguna ke aplikasi WhatsApp dengan pesan pemesanan yang sudah terisi otomatis.
 
 *   **`about.html` (Tentang Kami):**
     *   Halaman yang berisi narasi tentang sejarah, visi, dan misi Dodol Arulla untuk membangun hubungan emosional dengan pelanggan.
@@ -49,7 +50,7 @@ Aplikasi ini dibangun secara modular menggunakan Web Components untuk konsistens
 
 ### 3. Fungsionalitas Inti
 
-*   **Alur Pemesanan WhatsApp:** Sistem keranjang belanja internal telah digantikan sepenuhnya oleh alur pemesanan yang lebih sederhana. Tombol "Pesan via WhatsApp" pada halaman detail produk menjadi satu-satunya gerbang pemesanan, mengurangi friksi dan mempercepat proses.
+*   **Alur Pemesanan WhatsApp:** Sistem keranjang belanja internal telah digantikan sepenuhnya oleh alur pemesanan yang lebih sederhana. Tombol \"Pesan via WhatsApp\" pada halaman detail produk menjadi satu-satunya gerbang pemesanan, mengurangi friksi dan mempercepat proses.
 
 ### 4. Desain Visual dan Struktur
 
@@ -62,12 +63,23 @@ Aplikasi ini dibangun secara modular menggunakan Web Components untuk konsistens
 
 ---
 
-## Riwayat Perubahan Terakhir
+## Riwayat Perubahan (Sesi Terbaru)
 
-Berikut adalah ringkasan perubahan yang telah diimplementasikan dalam sesi pengembangan ini:
+Berikut adalah ringkasan perubahan yang telah diimplementasikan dalam sesi pengembangan ini, berfokus pada perombakan halaman utama:
+
+1.  **Desain Ulang Halaman Utama:**
+    *   Mengimplementasikan desain baru untuk *hero section* dengan mengganti latar belakang menjadi gambar jajaran produk Dodol Arulla.
+    *   Menyederhanakan tata letak awal untuk fokus pada pesan utama, lalu mengembalikan bagian "Kenapa Memilih Dodol Arulla?" dan *footer* untuk memastikan fungsionalitas gulir (scroll).
+
+2.  **Perbaikan dan Penyesuaian Tampilan:**
+    *   **Perbaikan Gambar Latar:** Mengatasi masalah gambar yang tidak muncul dengan memperbaiki kesalahan pengetikan pada path di CSS.
+    *   **Penyesuaian Posisi Teks:** Memastikan judul dan deskripsi pada *hero section* benar-benar berada di tengah layar, sesuai dengan desain yang diinginkan.
+    *   **Pembaruan Header:** Menambahkan fungsionalitas pada *header* yang berubah warna latar menjadi putih solid saat halaman digulir untuk meningkatkan visibilitas.
+
+## Riwayat Perubahan Sebelumnya
 
 1.  **Penyederhanaan Fitur:**
-    *   **Menghapus Fungsionalitas Keranjang Belanja:** Seluruh sistem keranjang belanja, termasuk modal, tombol "Tambah ke Keranjang", dan logika JavaScript terkait, telah dihapus untuk menyederhanakan alur pengguna.
+    *   **Menghapus Fungsionalitas Keranjang Belanja:** Seluruh sistem keranjang belanja, termasuk modal, tombol \"Tambah ke Keranjang\", dan logika JavaScript terkait, telah dihapus untuk menyederhanakan alur pengguna.
     *   **Menghapus Halaman Tidak Relevan:** Halaman `blog.html`, `contact.html`, `reseller.html`, `visit.html`, dan semua postingan blog individual telah dihapus dari proyek.
 
 2.  **Pembaruan Struktur dan Navigasi:**
@@ -76,7 +88,7 @@ Berikut adalah ringkasan perubahan yang telah diimplementasikan dalam sesi penge
 
 3.  **Implementasi Alur Pemesanan Baru:**
     *   **Pembuatan Halaman Detail Produk:** Halaman `product-detail.html` baru dibuat sebagai template untuk menampilkan informasi produk secara rinci.
-    *   **Integrasi Tombol WhatsApp:** Tombol "Pesan via WhatsApp" ditambahkan sebagai CTA utama pada halaman detail produk.
+    *   **Integrasi Tombol WhatsApp:** Tombol \"Pesan via WhatsApp\" ditambahkan sebagai CTA utama pada halaman detail produk.
     *   **Pembaruan Kartu Produk:** Komponen `product-card` diubah menjadi tautan langsung ke halaman detail produk, menghilangkan tombol-tombol sekunder.
 
 4.  **Reorganisasi Aset:**

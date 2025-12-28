@@ -1,334 +1,322 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
-
-:root {
-  --primary-color: #8B4513; /* SaddleBrown */
-  --secondary-color: #F5DEB3; /* Wheat */
-  --accent-color: #FF7F50; /* Coral */
-  --text-color: #333333;
-  --background-color: #FAF8F5;
-  --font-heading: 'Poppins', sans-serif;
-  --font-logo: 'Playfair Display', serif;
-  --font-body: 'Lato', sans-serif;
-  --spacing-unit: 10px;
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  --border-radius: 8px;
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: var(--font-body);
-  color: var(--text-color);
-  background-color: var(--background-color);
-  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-  margin: 0;
-  padding: 0;
-  line-height: 1.7;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  color: var(--primary-color);
-  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fff; /* Solid white background */
+  color: #333;
 }
 
 a {
-  color: var(--primary-color);
+  color: #c25e00;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--accent-color);
+  text-decoration: underline;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 calc(var(--spacing-unit) * 2);
+  padding: 0 20px;
 }
 
-/* --- Header Styles --- */
+/* Header */
 header {
-  background-color: transparent;
-  padding: 15px 0;
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
+  width: 100%;
   z-index: 1000;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  padding: 20px 0;
+  transition: background-color 0.3s, padding 0.3s, box-shadow 0.3s;
 }
 
 header.scrolled {
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
+  background-color: #fff; /* Solid white background */
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the nav block */
   align-items: center;
-}
-
-header nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-header nav ul li {
-  margin: 0;
-}
-
-header .logo-item {
-  margin: 0 30px;
 }
 
 header .logo img {
-  height: 60px;
+  height: 50px;
   transition: height 0.3s;
 }
 
 header.scrolled .logo img {
-  height: 50px;
+  height: 40px;
 }
 
-header nav a {
+header nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  margin: 0 20px;
+}
+
+header nav ul li.logo-item {
+  margin: 0 40px;
+}
+
+header nav ul li a {
+  font-weight: 600;
   color: #fff;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  padding: 10px;
-  position: relative;
+  padding: 10px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-bottom-color 0.3s;
 }
 
-header.scrolled nav a {
-    color: var(--primary-color);
+header.scrolled nav ul li a {
+  color: #555; /* Grey color for scrolled nav links */
 }
 
-header nav a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background-color: var(--accent-color);
-  transition: width 0.3s;
+header nav ul li a.active {
+  color: #ff8c00; /* Orange for active link on transparent header */
+  border-bottom-color: #ff8c00;
 }
 
-header nav a:hover::after,
-header nav a.active::after {
-  width: 70%;
+header.scrolled nav ul li a:hover,
+header.scrolled nav ul li a.active {
+  color: #ff8c00; /* Orange for active/hover on scrolled header */
+  border-bottom-color: #ff8c00;
 }
-
-header.scrolled nav a.active {
-    color: var(--accent-color);
-}
-
 
 /* Hamburger Menu */
 .hamburger-menu {
   display: none;
-  cursor: pointer;
   background: none;
   border: none;
+  cursor: pointer;
   padding: 10px;
   z-index: 1001;
+  position: absolute;
+  right: 20px;
 }
 
 .hamburger-menu span {
   display: block;
   width: 25px;
   height: 3px;
-  margin: 5px 0;
   background-color: #fff;
+  margin: 5px 0;
   transition: all 0.3s;
 }
 
 header.scrolled .hamburger-menu span {
-    background-color: var(--primary-color);
+  background-color: #333;
 }
 
+/* Main Content */
 main {
-    padding-top: 80px; /* Adjust this value based on header height */
+  padding-top: 0;
 }
 
+/* Hero Section */
 .hero {
-    padding-top: 120px; /* Or whatever padding it had */
-    padding-bottom: 60px; /* Or whatever padding it had */
-    margin-top: -80px; /* Counteract the main padding-top */
-}
-
-.cta-button {
-  background: linear-gradient(45deg, var(--accent-color), #ff9a8b);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/backgroudhero.png") no-repeat center center/cover;
   color: #fff;
-  padding: calc(var(--spacing-unit) * 1.2) calc(var(--spacing-unit) * 2.5);
-  border-radius: 50px;
-  font-weight: 700;
-  display: inline-block;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 15px rgba(255, 127, 80, 0.4);
-}
-
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(255, 127, 80, 0.6);
-  color: #fff;
-}
-
-.cta-button.secondary {
-    background: transparent;
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
-    box-shadow: none;
-}
-
-.cta-button.secondary:hover {
-    background: var(--accent-color);
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(255, 127, 80, 0.4);
-}
-
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/backgroudhero.png') no-repeat center center/cover;
-    color: #fff;
-    text-align: center;
-    padding: 120px 0;
+  text-align: center;
+  padding: 100px 20px;
+  min-height: 100vh; /* Changed to min-height to ensure it's at least full screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    color: #fff;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  font-size: 3.5rem;
+  margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto 40px auto; /* Centered the paragraph block */
 }
 
-section {
-    padding: 60px 0;
+.cta-button {
+  display: inline-block;
+  background-color: #ff8c00;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.page-header {
-    background-color: var(--secondary-color);
-    padding: calc(var(--spacing-unit) * 4) 0;
-    text-align: center;
-    margin-bottom: calc(var(--spacing-unit) * 4);
+.cta-button:hover {
+  background-color: #c25e00;
+  transform: translateY(-3px);
+  text-decoration: none;
 }
 
-.page-header h1 {
-    font-size: 3rem;
-    margin: 0;
-}
-
+/* Why Us Section */
 .why-us {
-    background-color: #fff;
+  padding: 80px 0;
+  background-color: #f8f7f5; /* Light gray background */
 }
 
 .reasons-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: calc(var(--spacing-unit) * 4);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  text-align: center;
+  margin-top: 40px;
 }
 
-.reason {
-    text-align: center;
-    padding: calc(var(--spacing-unit) * 2);
+.reason h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #c25e00;
 }
 
-.reason img {
-    height: 80px;
-    margin-bottom: calc(var(--spacing-unit) * 2);
+/* Favorite Products Section */
+.favorite-products {
+  padding: 80px 0;
+  background-color: #fff;
 }
 
-.product-grid {
-    display: grid;
-    gap: calc(var(--spacing-unit) * 3);
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.favorite-products h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #5a4a42; /* A brownish color */
 }
 
-.featured-products .featured-grid {
-    grid-template-columns: 1fr;
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
 }
 
-.view-more-container {
-    text-align: center;
-    margin-top: calc(var(--spacing-unit) * 4);
+.product-card {
+  background-color: #f8f7f5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  display: block;
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #c25e00;
+}
+
+.product-info p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.cta-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Footer */
 footer {
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: calc(var(--spacing-unit) * 5) 0;
-  margin-top: 60px;
+  background-color: #5a4a42;
+  color: #e8e5e1;
+  padding: 60px 0;
 }
 
 .footer-columns {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: calc(var(--spacing-unit) * 4);
+  gap: 40px;
 }
 
 .footer-column h4 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
   color: #fff;
-  font-size: 1.2rem;
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: var(--spacing-unit);
+  border-bottom: 2px solid #ff8c00;
   display: inline-block;
+  padding-bottom: 10px;
 }
 
-.footer-column a {
-  color: var(--secondary-color);
-  transition: color 0.3s;
-}
-
-.footer-column a:hover {
-  color: #fff;
+.footer-column p,
+.footer-column ul li {
+  margin-bottom: 10px;
 }
 
 .footer-column ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
-.footer-column li {
-    margin-bottom: var(--spacing-unit);
+.footer-column a {
+  color: #e8e5e1;
 }
 
-/* --- Responsive Header --- */
-@media (max-width: 992px) {
-  header nav {
+.footer-column a:hover {
+  color: #ff8c00;
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header nav ul {
     display: none;
-    position: fixed;
+    flex-direction: column;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0,0,0,0.9);
-    flex-direction: column;
+    background-color: #fff;
     justify-content: center;
-    align-items: center;
+    text-align: center;
   }
 
-  header nav.active {
+  header nav.active ul {
     display: flex;
   }
 
-  header nav ul {
-    flex-direction: column;
-    gap: 30px;
+  header nav ul li {
+    margin: 20px 0;
   }
 
-  header nav a {
-      font-size: 1.5rem;
-      color: #fff !important; /* Override scrolled color */
+  header nav ul li.logo-item {
+    display: none;
+  }
+
+  header nav ul li a,
+  header.scrolled nav ul li a {
+    color: #333;
+    font-size: 1.5rem;
   }
 
   .hamburger-menu {
@@ -344,38 +332,16 @@ footer {
   .hamburger-menu.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
   }
-    /* On mobile, ensure hamburger menu lines are always white even when scrolled */
-    header.scrolled .hamburger-menu.active span {
-        background-color: #fff;
-    }
-}
 
-@media (min-width: 768px) {
-    .featured-products .featured-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 992px) {
-  .hero h1 {
-    font-size: 3rem;
+  header.scrolled .hamburger-menu.active span {
+    background-color: #333;
   }
 
-  .featured-products .featured-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
   .hero h1 {
     font-size: 2.5rem;
   }
 
   .hero p {
-      font-size: 1.2rem;
-  }
-
-  .page-header h1 {
-      font-size: 2rem;
+    font-size: 1.2rem;
   }
 }
