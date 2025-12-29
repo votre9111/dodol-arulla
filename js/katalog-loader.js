@@ -5,17 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (productGrid) {
     products.forEach(product => {
-      // Buat elemen <product-card> baru
       const card = document.createElement('product-card');
 
-      // Atur atribut untuk kartu berdasarkan data produk
       card.setAttribute('name', product.name);
       card.setAttribute('image', product.image);
       card.setAttribute('price', product.price);
-      card.setAttribute('description', product.description.substring(0, 100) + '...'); // Ambil ringkasan deskripsi
+      card.setAttribute('description', product.description.substring(0, 100) + '...');
       card.setAttribute('detail-url', `product-detail.html?id=${product.id}`);
 
-      // Tambahkan kartu ke dalam grid
       productGrid.appendChild(card);
     });
   }
