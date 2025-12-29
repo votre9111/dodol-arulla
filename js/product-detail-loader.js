@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ganti judul halaman
     document.title = `${product.name} - Dodol Arulla`;
 
+    // Format harga ke dalam format Rupiah
+    const formattedPrice = new Intl.NumberFormat('id-ID', {
+      style: 'currency',
+      currency: 'IDR',
+      minimumFractionDigits: 0
+    }).format(product.price);
+
     // Buat HTML untuk detail produk
     productDetailContainer.innerHTML = `
       <div class="product-image-gallery">
@@ -22,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="product-info">
         <h1 class="product-title">${product.name}</h1>
-        <p class="product-price">${product.price}</p>
+        <p class="product-price">${formattedPrice}</p>
         <p class="product-description">${product.description}</p>
         <div class="product-actions">
           <a href="https-wa-me-6281234567890?text=Halo%2C%20saya%20tertarik%20untuk%20memesan%20${product.name}" class="whatsapp-button" target="_blank">

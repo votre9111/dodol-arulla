@@ -10,28 +10,21 @@ Website Dodol Arulla adalah sebuah platform digital yang berfungsi sebagai etala
 
 ### 1. Struktur Halaman dan Komponen
 
-Seluruh halaman utama (`index.html`, `about.html`, `katalog.html`, `sop.html`) menggunakan struktur HTML statis untuk bagian *header* dan *footer* guna memastikan tampilan yang konsisten di seluruh situs.
-
-*   **Header Statis:**
-    *   Berisi logo dan navigasi utama ke semua halaman.
-    *   Teks navigasi telah diseragamkan ke dalam Bahasa Indonesia (contoh: "Tentang Kami").
-    *   Memiliki fungsionalitas perubahan latar belakang saat digulir pada halaman utama.
-
-*   **Footer Statis:**
-    *   Terbagi menjadi tiga kolom: deskripsi singkat perusahaan, navigasi situs, dan informasi kontak.
-
-*   **`product-card.js`:**
-    *   Komponen modular berbasis JavaScript untuk menampilkan kartu produk secara dinamis di halaman katalog.
+*   **Header Konsisten:** Header di seluruh situs (`index.html`, `about.html`, `katalog.html`, `sop.html`, `product-detail.html`) kini memiliki tampilan yang seragam. Header di halaman utama bersifat transparan pada awalnya dan menjadi solid saat digulir, sementara di halaman lain header langsung tampil solid.
+*   **Footer Statis:** Footer yang konsisten digunakan di semua halaman.
+*   **Komponen Produk:** Kartu produk digunakan di halaman utama dan katalog.
 
 ### 2. Fungsionalitas Inti
 
-*   **Alur Pemesanan WhatsApp:** Pengguna dapat memesan langsung melalui WhatsApp dari halaman detail produk.
+*   **Detail Produk Dinamis:** Halaman `product-detail.html` dapat memuat data produk (gambar, nama, harga, deskripsi) secara dinamis berdasarkan parameter ID di URL. Harganya juga diformat dalam mata uang Rupiah.
+*   **Tautan Produk:** Produk di halaman utama dan katalog dapat diklik untuk mengarahkan ke halaman detail yang sesuai.
+*   **Alur Pemesanan WhatsApp:** Tombol pemesanan di halaman detail produk mengarahkan pengguna ke WhatsApp.
 
 ### 3. Desain Visual dan Struktur
 
 *   **Estetika:** Desain bersih, modern, dan berfokus pada visual produk.
 *   **Struktur File:** Aset diatur dalam folder `images/`, `css/`, dan `js/`.
-*   **Responsif:** Desain diadaptasi untuk perangkat desktop dan mobile.
+*   **Responsif:** Seluruh desain, termasuk halaman detail produk, diadaptasi untuk perangkat desktop dan mobile.
 
 ---
 
@@ -39,19 +32,22 @@ Seluruh halaman utama (`index.html`, `about.html`, `katalog.html`, `sop.html`) m
 
 Berikut adalah ringkasan perubahan yang diimplementasikan pada sesi pengembangan ini:
 
-1.  **Perbaikan dan Standardisasi Header & Footer:**
-    *   **Identifikasi Masalah:** Ditemukan bahwa upaya sebelumnya untuk menggunakan komponen web (`<site-header>` dan `<site-footer>`) gagal karena file definisi komponen belum dibuat. Hal ini menyebabkan *header* dan *footer* tidak muncul di halaman `index.html` dan `sop.html`.
+1.  **Perbaikan Total Tata Letak Halaman Detail Produk:**
+    *   **Identifikasi Masalah:** Tata letak halaman `product-detail.html` rusak total, menampilkan gambar berukuran besar dan teks tanpa format.
     *   **Implementasi Perbaikan:**
-        *   Mengganti komponen web yang rusak di `sop.html` dengan kode HTML statis untuk *header* dan *footer*.
-        *   Mengembalikan *footer* statis ke `index.html`.
-        *   Menyeragamkan kode *header* dan *footer* di semua halaman (`index.html`, `about.html`, `katalog.html`, `sop.html`) untuk memastikan konsistensi visual dan struktural.
+        *   Menambahkan aturan CSS di `css/style.css` untuk membuat tata letak dua kolom (gambar di kiri, info di kanan) pada desktop, dan satu kolom pada mobile.
+        *   Memperbarui `js/product-detail-loader.js` untuk memformat harga dari angka (misal: `25000`) menjadi format mata uang Rupiah (`Rp 25.000`).
+        *   Menyesuaikan gaya header agar selalu solid di halaman detail produk untuk konsistensi visual.
 
-2.  **Penyeragaman Teks Navigasi:**
-    *   Mengubah item menu "About" menjadi "Tentang Kami" di semua *header* dan *footer* di seluruh situs agar konsisten menggunakan Bahasa Indonesia.
-    *   Memastikan kelas `.active` pada menu navigasi diterapkan dengan benar di setiap halaman.
+2.  **Perbaikan Fungsionalitas Halaman Detail Produk:**
+    *   **Identifikasi Masalah:** Halaman detail produk gagal memuat data karena ID produk yang salah pada tautan.
+    *   **Implementasi Perbaikan:** Memperbaiki ID produk di `index.html` agar sesuai dengan data di `js/product-data.js`.
+
+3.  **Implementasi Tautan Produk Favorit:**
+    *   **Fitur:** Menambahkan fungsionalitas klik pada kartu produk di halaman utama.
 
 ## Riwayat Perubahan Sebelumnya
 
-*   **Penyempurnaan Halaman Utama:** Minimalisasi bagian "Kenapa Memilih Dodol Arulla?" dan penambahan bagian "Varian Paling Favorit" dengan tombol CTA.
+*   **Standardisasi Header & Footer:** Menyeragamkan kode HTML dan teks navigasi di seluruh situs.
+*   **Penyempurnaan Halaman Utama:** Minimalisasi beberapa bagian dan penambahan bagian "Varian Paling Favorit".
 *   **Desain Ulang Halaman Utama:** Implementasi desain baru untuk *hero section* dan *header* dinamis.
-*   **Penyederhanaan Fitur:** Penghapusan fitur keranjang belanja dan pengenalan alur pemesanan via WhatsApp.

@@ -36,12 +36,12 @@ header {
   z-index: 1000;
   padding: 20px 0;
   transition: background-color 0.3s, padding 0.3s, box-shadow 0.3s;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header.scrolled {
-  background-color: #fff; /* Solid white background */
   padding: 15px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header .container {
@@ -51,12 +51,8 @@ header .container {
 }
 
 header .logo img {
-  height: 50px;
+  height: 40px; /* Start with smaller logo */
   transition: height 0.3s;
-}
-
-header.scrolled .logo img {
-  height: 40px;
 }
 
 header nav ul {
@@ -77,25 +73,19 @@ header nav ul li.logo-item {
 
 header nav ul li a {
   font-weight: 600;
-  color: #fff;
+  color: #555;
   padding: 10px 0;
   border-bottom: 2px solid transparent;
   transition: color 0.3s, border-bottom-color 0.3s;
 }
 
-header.scrolled nav ul li a {
-  color: #555; /* Grey color for scrolled nav links */
-}
-
 header nav ul li a.active {
-  color: #ff8c00; /* Orange for active link on transparent header */
+  color: #ff8c00;
   border-bottom-color: #ff8c00;
 }
 
-header.scrolled nav ul li a:hover,
-header.scrolled nav ul li a.active {
-  color: #ff8c00; /* Orange for active/hover on scrolled header */
-  border-bottom-color: #ff8c00;
+header nav ul li a:hover {
+  color: #ff8c00;
 }
 
 /* Hamburger Menu */
@@ -114,18 +104,14 @@ header.scrolled nav ul li a.active {
   display: block;
   width: 25px;
   height: 3px;
-  background-color: #fff;
+  background-color: #333;
   margin: 5px 0;
   transition: all 0.3s;
 }
 
-header.scrolled .hamburger-menu span {
-  background-color: #333;
-}
-
 /* Main Content */
 main {
-  padding-top: 0;
+  padding-top: 80px; /* Adjust for fixed header */
 }
 
 /* Hero Section */
@@ -134,11 +120,12 @@ main {
   color: #fff;
   text-align: center;
   padding: 100px 20px;
-  min-height: 100vh; /* Changed to min-height to ensure it's at least full screen */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: -80px; /* Overlap header */
 }
 
 .hero h1 {
@@ -149,7 +136,7 @@ main {
 .hero p {
   font-size: 1.5rem;
   max-width: 600px;
-  margin: 0 auto 40px auto; /* Centered the paragraph block */
+  margin: 0 auto 40px auto;
 }
 
 .cta-button {
@@ -168,11 +155,12 @@ main {
   text-decoration: none;
 }
 
-/* Why Us Section */
-.why-us {
+/* Why Us & Favorite Products */
+.why-us, .favorite-products {
   padding: 80px 0;
-  background-color: #f8f7f5; /* Light gray background */
 }
+.why-us { background-color: #f8f7f5; }
+.favorite-products { background-color: #fff; }
 
 .reasons-grid {
   display: grid;
@@ -188,23 +176,22 @@ main {
   color: #c25e00;
 }
 
-/* Favorite Products Section */
-.favorite-products {
-  padding: 80px 0;
-  background-color: #fff;
-}
-
 .favorite-products h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 40px;
-  color: #5a4a42; /* A brownish color */
+  color: #5a4a42;
 }
 
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
+}
+
+a.product-link, a.product-link:hover {
+    text-decoration: none;
+    color: inherit;
 }
 
 .product-card {
@@ -243,6 +230,72 @@ main {
 .cta-container {
   text-align: center;
   margin-top: 40px;
+}
+
+/* Product Detail Page */
+.product-detail-page {
+  padding: 40px 0;
+}
+
+.product-detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.product-image-gallery .main-product-image {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.product-detail-layout .product-info .product-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.product-detail-layout .product-info .product-price {
+  font-size: 2rem;
+  color: #c25e00;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.product-detail-layout .product-info .product-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    background-color: #25D366; /* WhatsApp Green */
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+}
+
+.whatsapp-button:hover {
+    background-color: #1DAE56;
+    transform: translateY(-3px);
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Error Message */
+.error-message {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 80px 0;
 }
 
 /* Footer */
@@ -287,6 +340,16 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 992px) {
+  .product-detail-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .product-detail-layout .product-info .product-title {
+    font-size: 2.2rem;
+  }
+}
+
 @media (max-width: 768px) {
   header nav ul {
     display: none;
@@ -335,6 +398,10 @@ footer {
 
   header.scrolled .hamburger-menu.active span {
     background-color: #333;
+  }
+
+  .hero {
+    margin-top: 0;
   }
 
   .hero h1 {
