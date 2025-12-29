@@ -8,7 +8,7 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
-  background-color: #fff; /* Solid white background */
+  background-color: #f9f9f9; /* A slightly softer white */
   color: #333;
 }
 
@@ -111,7 +111,20 @@ header nav ul li a:hover {
 
 /* Main Content */
 main {
-  padding-top: 80px; /* Adjust for fixed header */
+  padding: 120px 0 80px; /* Adjust top padding */
+}
+
+.page-header {
+  background: #5a4a42;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 /* Hero Section */
@@ -232,6 +245,76 @@ a.product-link, a.product-link:hover {
   margin-top: 40px;
 }
 
+/* About Page Specifics */
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  color: #5a4a42;
+  margin-bottom: 20px;
+}
+
+.vision-mission-section {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.vision-mission-section h2 {
+  font-size: 2.5rem;
+  color: #5a4a42;
+  margin-bottom: 40px;
+}
+
+.vision-mission-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  text-align: left;
+}
+
+.vision, .mission {
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+}
+
+.vision h3, .mission h3 {
+  font-size: 1.8rem;
+  color: #c25e00;
+  margin-bottom: 15px;
+}
+
+.mission ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.mission ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+
+.mission ul li::before {
+  content: '✔';
+  color: #ff8c00;
+  position: absolute;
+  left: 0;
+}
+
 /* Product Detail Page */
 .product-detail-page {
   padding: 40px 0;
@@ -341,12 +424,17 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 992px) {
-  .product-detail-layout {
+  .about-section, .vision-mission-content, .product-detail-layout {
     grid-template-columns: 1fr;
-    gap: 40px;
   }
   .product-detail-layout .product-info .product-title {
     font-size: 2.2rem;
+  }
+  .about-image {
+    text-align: center; /* Center image on mobile */
+  }
+  .about-image img {
+    max-width: 80%; /* Don't let it be too wide on mobile */
   }
 }
 
@@ -398,6 +486,14 @@ footer {
 
   header.scrolled .hamburger-menu.active span {
     background-color: #333;
+  }
+
+  main {
+    padding-top: 100px;
+  }
+
+  .page-header h1 {
+    font-size: 2.2rem;
   }
 
   .hero {
