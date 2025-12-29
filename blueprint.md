@@ -18,7 +18,7 @@ Website Dodol Arulla adalah sebuah platform digital yang berfungsi sebagai etala
 
 *   **Detail Produk Dinamis:** Halaman `product-detail.html` memuat data produk secara dinamis berdasarkan ID di URL. Harganya diformat dalam mata uang Rupiah.
 *   **Tautan Produk:** Produk di halaman utama dan katalog dapat diklik untuk mengarahkan ke halaman detail yang sesuai.
-*   **Alur Pemesanan WhatsApp:** Tombol pemesanan di halaman detail produk mengarahkan pengguna ke nomor WhatsApp yang sudah ditentukan (`6285279275965`).
+*   **Alur Pemesanan WhatsApp:** Tombol pemesanan di halaman detail produk mengarahkan pengguna ke nomor WhatsApp yang sudah benar (`6285227823228`).
 
 ### 3. Desain Visual dan Struktur
 
@@ -32,9 +32,9 @@ Website Dodol Arulla adalah sebuah platform digital yang berfungsi sebagai etala
 
 Berikut adalah ringkasan perubahan yang diimplementasikan pada sesi pengembangan ini:
 
-1.  **Pembaruan Nomor WhatsApp:**
-    *   **Permintaan:** Mengganti nomor tujuan WhatsApp untuk pemesanan.
-    *   **Implementasi:** Mengubah nomor di `js/product-detail-loader.js` menjadi `6285279275965`.
+1.  **Koreksi Final Nomor WhatsApp:**
+    *   **Permintaan:** Mengganti nomor tujuan WhatsApp untuk kedua kalinya dengan nomor yang sudah divalidasi.
+    *   **Implementasi:** Mengubah nomor di `js/product-detail-loader.js` menjadi `6285227823228`.
 
 2.  **Perbaikan Tautan WhatsApp:**
     *   **Identifikasi Masalah:** Tautan pada tombol "Pesan via WhatsApp" memiliki format yang salah.
