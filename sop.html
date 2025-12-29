@@ -7,7 +7,30 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <site-header></site-header>
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+          <li class="logo-item">
+            <a href="index.html" class="logo">
+              <img src="images/logo.png" alt="Logo Arulla">
+            </a>
+          </li>
+          <li><a href="katalog.html">Katalog</a></li>
+          <li><a href="sop.html" class="active">SOP</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <button class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
   <main class="sop-page">
     <div class="container">
@@ -41,9 +64,31 @@
     </div>
   </main>
 
-  <site-footer></site-footer>
+  <footer>
+    <div class="container">
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h4>Dodol Arulla</h4>
+                <p>Inovasi dodol modern dari Purwokerto. Manisnya pas, buahnya berasa!</p>
+            </div>
+            <div class="footer-column">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="katalog.html">Katalog</a></li>
+                    <li><a href="sop.html">SOP</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Kontak</h4>
+                <p>Purwokerto, Jawa Tengah</p>
+                <p><a href="mailto:info@dodolarulla.com">info@dodolarulla.com</a></p>
+            </div>
+        </div>
+    </div>
+  </footer>
 
-  <script src="js/components/header-component.js"></script>
-  <script src="js/components/footer-component.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
