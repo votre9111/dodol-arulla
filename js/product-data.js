@@ -1,45 +1,59 @@
 const products = [
   {
-    id: 'durian-original',
-    name: 'Dodol Durian Original',
+    id: 'belimbing',
+    name: 'Dodol Belimbing Wuluh',
+    price: 23000,
+    image: 'images/produk/product-belimbingwuluh.png',
+    description: 'Rasa asam segar belimbing wuluh berpadu dengan manisnya dodol, menciptakan sensasi rasa yang unik dan tak terlupakan. Pilihan tepat bagi yang bosan dengan rasa manis biasa.'
+  },
+  {
+    id: 'durian',
+    name: 'Dodol Durian',
     price: 25000,
-    image: 'images/duren.png',
+    image: 'images/produk/product-durian.png',
     description: 'Rasa klasik dodol durian dengan manis yang pas dan aroma durian yang kuat. Dibuat dari durian pilihan dan bahan-bahan berkualitas tanpa pengawet.'
   },
   {
-    id: 'strawberry-surprise',
-    name: 'Dodol Strawberry Surprise',
-    price: 23000,
-    image: 'images/strawberry.png',
-    description: 'Sensasi rasa baru dengan perpaduan manis dodol dan asam segar dari buah stroberi asli. Cocok untuk Anda yang menyukai rasa unik dan menyegarkan.'
-  },
-  {
-    id: 'misteri-moka',
-    name: 'Dodol Misteri Moka',
-    price: 24000,
-    image: 'images/mocca.png',
-    description: 'Perpaduan klasik antara dodol dan aroma kopi moka yang khas. Memberikan pengalaman rasa yang hangat dan nikmat di setiap gigitannya.'
-  },
-  {
-    id: 'nangka-klasik',
-    name: 'Dodol Nangka Klasik',
+    id: 'jambu',
+    name: 'Dodol Jambu Biji',
     price: 22000,
-    image: 'images/nangka.png',
+    image: 'images/produk/product-jambubiji.png',
+    description: 'Nikmati aroma khas dan rasa manis dari jambu biji merah pilihan dalam setiap gigitan dodol. Sumber vitamin C yang lezat!'
+  },
+  {
+    id: 'mangga',
+    name: 'Dodol Mangga',
+    price: 24000,
+    image: 'images/produk/product-mangga.png',
+    description: 'Sensasi manis dan segar dari buah mangga asli yang diolah menjadi dodol legit. Membawa Anda ke suasana tropis yang ceria.'
+  },
+  {
+    id: 'nanas',
+    name: 'Dodol Nanas',
+    price: 23000,
+    image: 'images/produk/product-nanas.png',
+    description: 'Perpaduan rasa manis dan sedikit asam dari buah nanas segar. Memberikan kesegaran di setiap gigitan dan cocok dinikmati kapan saja.'
+  },
+  {
+    id: 'nangka',
+    name: 'Dodol Nangka',
+    price: 22000,
+    image: 'images/produk/product-nangka.png',
     description: 'Nikmati aroma dan rasa manis khas dari buah nangka yang dipadukan dengan tekstur kenyal dodol. Sebuah cita rasa tradisional yang tak lekang oleh waktu.'
   },
   {
-    id: 'kelapa-legit',
-    name: 'Dodol Kelapa Legit',
-    price: 21000,
-    image: 'images/kelapa.png',
-    description: 'Rasa gurih dan manis dari kelapa parut asli yang menyatu sempurna dengan adonan dodol. Teksturnya yang kaya akan memberikan pengalaman rasa yang otentik.'
+    id: 'pisang',
+    name: 'Dodol Pisang Cavendish',
+    price: 22000,
+    image: 'images/produk/product-pisangcavendish.png',
+    description: 'Manisnya pisang Cavendish yang khas diolah menjadi dodol yang lembut dan legit. Pilihan klasik yang selalu disukai semua kalangan.'
   },
   {
-    id: 'cokelat-premium',
-    name: 'Dodol Cokelat Premium',
-    price: 26000,
-    image: 'images/coklat.png',
-    description: 'Untuk para pencinta cokelat, varian ini adalah pilihan yang tepat. Dibuat dengan cokelat premium yang lumer di mulut, berpadu dengan kekenyalan dodol.'
+    id: 'sirsak',
+    name: 'Dodol Sirsak',
+    price: 23000,
+    image: 'images/produk/product-sirsak.png',
+    description: 'Kombinasi unik antara rasa manis dodol dengan asamnya buah sirsak yang menyegarkan. Pembangkit selera yang sempurna.'
   }
 ];
 
