@@ -10,15 +10,15 @@ Website Dodol Arulla adalah sebuah platform digital yang berfungsi sebagai etala
 
 ### 1. Struktur Halaman dan Komponen
 
-*   **Header Konsisten:** Header di seluruh situs (`index.html`, `about.html`, `katalog.html`, `sop.html`, `product-detail.html`) kini memiliki tampilan yang seragam. Header di halaman utama bersifat transparan pada awalnya dan menjadi solid saat digulir, sementara di halaman lain header langsung tampil solid.
+*   **Header Konsisten:** Header di seluruh situs memiliki tampilan yang seragam dan profesional.
 *   **Footer Statis:** Footer yang konsisten digunakan di semua halaman.
 *   **Komponen Produk:** Kartu produk digunakan di halaman utama dan katalog.
 
 ### 2. Fungsionalitas Inti
 
-*   **Detail Produk Dinamis:** Halaman `product-detail.html` dapat memuat data produk (gambar, nama, harga, deskripsi) secara dinamis berdasarkan parameter ID di URL. Harganya juga diformat dalam mata uang Rupiah.
+*   **Detail Produk Dinamis:** Halaman `product-detail.html` memuat data produk secara dinamis berdasarkan ID di URL. Harganya diformat dalam mata uang Rupiah.
 *   **Tautan Produk:** Produk di halaman utama dan katalog dapat diklik untuk mengarahkan ke halaman detail yang sesuai.
-*   **Alur Pemesanan WhatsApp:** Tombol pemesanan di halaman detail produk mengarahkan pengguna ke WhatsApp.
+*   **Alur Pemesanan WhatsApp:** Tombol pemesanan di halaman detail produk mengarahkan pengguna ke WhatsApp dengan format tautan yang sudah benar.
 
 ### 3. Desain Visual dan Struktur
 
@@ -32,22 +32,23 @@ Website Dodol Arulla adalah sebuah platform digital yang berfungsi sebagai etala
 
 Berikut adalah ringkasan perubahan yang diimplementasikan pada sesi pengembangan ini:
 
-1.  **Perbaikan Total Tata Letak Halaman Detail Produk:**
-    *   **Identifikasi Masalah:** Tata letak halaman `product-detail.html` rusak total, menampilkan gambar berukuran besar dan teks tanpa format.
+1.  **Perbaikan Tautan WhatsApp:**
+    *   **Identifikasi Masalah:** Tautan pada tombol "Pesan via WhatsApp" memiliki format yang salah (`https-wa-me-` bukannya `https://wa.me/`).
+    *   **Implementasi Perbaikan:** Memperbaiki kesalahan ketik pada URL di `js/product-detail-loader.js` untuk memastikan fungsionalitas pemesanan berjalan dengan benar.
+
+2.  **Perbaikan Total Tata Letak Halaman Detail Produk:**
+    *   **Identifikasi Masalah:** Tata letak halaman `product-detail.html` rusak, menampilkan gambar dan teks tanpa format.
     *   **Implementasi Perbaikan:**
-        *   Menambahkan aturan CSS di `css/style.css` untuk membuat tata letak dua kolom (gambar di kiri, info di kanan) pada desktop, dan satu kolom pada mobile.
-        *   Memperbarui `js/product-detail-loader.js` untuk memformat harga dari angka (misal: `25000`) menjadi format mata uang Rupiah (`Rp 25.000`).
-        *   Menyesuaikan gaya header agar selalu solid di halaman detail produk untuk konsistensi visual.
+        *   Menambahkan aturan CSS untuk tata letak dua kolom yang responsif.
+        *   Memperbarui skrip untuk memformat harga ke dalam Rupiah.
+        *   Menyeragamkan gaya header.
 
-2.  **Perbaikan Fungsionalitas Halaman Detail Produk:**
-    *   **Identifikasi Masalah:** Halaman detail produk gagal memuat data karena ID produk yang salah pada tautan.
-    *   **Implementasi Perbaikan:** Memperbaiki ID produk di `index.html` agar sesuai dengan data di `js/product-data.js`.
-
-3.  **Implementasi Tautan Produk Favorit:**
-    *   **Fitur:** Menambahkan fungsionalitas klik pada kartu produk di halaman utama.
+3.  **Perbaikan Fungsionalitas Halaman Detail Produk:**
+    *   **Identifikasi Masalah:** Halaman detail gagal memuat data karena ID produk yang salah.
+    *   **Implementasi Perbaikan:** Memperbaiki ID produk di `index.html`.
 
 ## Riwayat Perubahan Sebelumnya
 
 *   **Standardisasi Header & Footer:** Menyeragamkan kode HTML dan teks navigasi di seluruh situs.
-*   **Penyempurnaan Halaman Utama:** Minimalisasi beberapa bagian dan penambahan bagian "Varian Paling Favorit".
+*   **Penyempurnaan Halaman Utama:** Penambahan bagian "Varian Paling Favorit".
 *   **Desain Ulang Halaman Utama:** Implementasi desain baru untuk *hero section* dan *header* dinamis.
