@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p class="product-price">${formattedPrice}</p>
         <p class="product-description">${product.description}</p>
         <div class="product-actions">
-          <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20untuk%20memesan%20${product.name}" class="whatsapp-button" target="_blank">
+          <a href="https://wa.me/6285279275965?text=Halo%2C%20saya%20tertarik%20untuk%20memesan%20${product.name}" class="whatsapp-button" target="_blank">
             Pesan via WhatsApp
           </a>
         </div>

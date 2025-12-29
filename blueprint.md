@@ -18,7 +18,7 @@ Website Dodol Arulla adalah sebuah platform digital yang berfungsi sebagai etala
 
 *   **Detail Produk Dinamis:** Halaman `product-detail.html` memuat data produk secara dinamis berdasarkan ID di URL. Harganya diformat dalam mata uang Rupiah.
 *   **Tautan Produk:** Produk di halaman utama dan katalog dapat diklik untuk mengarahkan ke halaman detail yang sesuai.
-*   **Alur Pemesanan WhatsApp:** Tombol pemesanan di halaman detail produk mengarahkan pengguna ke WhatsApp dengan format tautan yang sudah benar.
+*   **Alur Pemesanan WhatsApp:** Tombol pemesanan di halaman detail produk mengarahkan pengguna ke nomor WhatsApp yang sudah ditentukan (`6285279275965`).
 
 ### 3. Desain Visual dan Struktur
 
@@ -32,18 +32,19 @@ Website Dodol Arulla adalah sebuah platform digital yang berfungsi sebagai etala
 
 Berikut adalah ringkasan perubahan yang diimplementasikan pada sesi pengembangan ini:
 
-1.  **Perbaikan Tautan WhatsApp:**
-    *   **Identifikasi Masalah:** Tautan pada tombol "Pesan via WhatsApp" memiliki format yang salah (`https-wa-me-` bukannya `https://wa.me/`).
-    *   **Implementasi Perbaikan:** Memperbaiki kesalahan ketik pada URL di `js/product-detail-loader.js` untuk memastikan fungsionalitas pemesanan berjalan dengan benar.
+1.  **Pembaruan Nomor WhatsApp:**
+    *   **Permintaan:** Mengganti nomor tujuan WhatsApp untuk pemesanan.
+    *   **Implementasi:** Mengubah nomor di `js/product-detail-loader.js` menjadi `6285279275965`.
 
-2.  **Perbaikan Total Tata Letak Halaman Detail Produk:**
-    *   **Identifikasi Masalah:** Tata letak halaman `product-detail.html` rusak, menampilkan gambar dan teks tanpa format.
-    *   **Implementasi Perbaikan:**
-        *   Menambahkan aturan CSS untuk tata letak dua kolom yang responsif.
-        *   Memperbarui skrip untuk memformat harga ke dalam Rupiah.
-        *   Menyeragamkan gaya header.
+2.  **Perbaikan Tautan WhatsApp:**
+    *   **Identifikasi Masalah:** Tautan pada tombol "Pesan via WhatsApp" memiliki format yang salah.
+    *   **Implementasi Perbaikan:** Memperbaiki format URL di `js/product-detail-loader.js`.
 
-3.  **Perbaikan Fungsionalitas Halaman Detail Produk:**
+3.  **Perbaikan Total Tata Letak Halaman Detail Produk:**
+    *   **Identifikasi Masalah:** Tata letak halaman `product-detail.html` rusak.
+    *   **Implementasi Perbaikan:** Menambahkan CSS untuk tata letak dua kolom, memformat harga, dan menyeragamkan header.
+
+4.  **Perbaikan Fungsionalitas Halaman Detail Produk:**
     *   **Identifikasi Masalah:** Halaman detail gagal memuat data karena ID produk yang salah.
     *   **Implementasi Perbaikan:** Memperbaiki ID produk di `index.html`.
 
